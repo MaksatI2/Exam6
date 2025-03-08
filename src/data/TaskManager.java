@@ -3,6 +3,7 @@ package data;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import enums.TaskType;
 import model.Task;
 
 import java.io.FileReader;
@@ -79,6 +80,27 @@ public class TaskManager {
             }
         } catch (IOException e) {
             System.out.println("Tasks.json not found, starting with empty task list.");
+        }
+    }
+
+    public void updateTask(String taskId, LocalDate date, String newTitle, String newDescription, String newType) {
+        List<Task> tasks = tasksByDate.get(date);
+        if (tasks != null) {
+            for (Task task : tasks) {
+                if (task.getId().equals(taskId)) {
+                    task.setTitle(newTitle);
+                    task.setDescription(newDescription);
+
+                    try {
+                        TaskType typeEnum = TaskType.valueOf(newType.toUpperCase());
+                        task.setType(typeEnum);
+                    } catch (IllegalArgumentException e) {
+                        return;
+                    }
+                    saveTasks();
+                    return;
+                }
+            }
         }
     }
 }

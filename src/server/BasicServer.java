@@ -20,6 +20,7 @@ public class BasicServer {
 
         server.createContext("/calendar", new CalendarHandler(this));
         server.createContext("/tasks", new TaskListHandler(this));
+        server.createContext("/tasks/edit", new EditTaskHandler(taskManager));
         server.createContext("/tasks/add", new AddTaskHandler(taskManager));
         server.createContext("/tasks/delete", new TaskDeleteHandler(this));
 
