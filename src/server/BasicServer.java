@@ -12,6 +12,7 @@ import template.RenderTemplate;
 import java.io.File;
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.util.Map;
 
 public class BasicServer {
     private final TaskManager taskManager = new TaskManager();
@@ -34,10 +35,11 @@ public class BasicServer {
             }
 
             if ("/".equals(requestPath)) {
-                handleRoot(exchange);
-            } else {
-                RenderTemplate.sendErrorResponse(exchange, ResponseCodes.NOT_FOUND, "404 NOT FOUND");
+                RenderTemplate.renderTemplate(exchange, "root.html", Map.of());
+                return;
             }
+
+            RenderTemplate.sendErrorResponse(exchange, ResponseCodes.NOT_FOUND, "404 NOT FOUND");
         });
 
         server.setExecutor(null);
