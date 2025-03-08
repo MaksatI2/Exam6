@@ -26,7 +26,6 @@ public class StaticFileHandler implements HttpHandler {
                 return;
             }
 
-            // Устанавливаем Content-Type в зависимости от файла
             String mimeType = Files.probeContentType(Path.of(file.getAbsolutePath()));
             if (mimeType != null) {
                 exchange.getResponseHeaders().set("Content-Type", mimeType);
@@ -34,7 +33,6 @@ public class StaticFileHandler implements HttpHandler {
                 exchange.getResponseHeaders().set("Content-Type", "application/octet-stream");
             }
 
-            // Отправляем файл
             exchange.sendResponseHeaders(200, file.length());
             try (OutputStream os = exchange.getResponseBody()) {
                 Files.copy(Path.of(file.getAbsolutePath()), os);
@@ -45,4 +43,3 @@ public class StaticFileHandler implements HttpHandler {
         }
     }
 }
-
