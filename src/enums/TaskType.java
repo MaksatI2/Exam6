@@ -3,7 +3,7 @@ package enums;
 public enum TaskType {
     REGULAR("#7ECDFB"),
     URGENT("#FF5733"),
-    WORK("#33FF57"),
+    WORK("#4CAF50"),
     SHOPPING("#3357FF"),
     OTHER("#FF33A6");
 
