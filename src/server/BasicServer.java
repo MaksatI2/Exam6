@@ -7,7 +7,9 @@ import data.TaskManager;
 import enums.TaskType;
 import template.RenderTemplate;
 import utils.FormParser;
+import handlers.StaticFileHandler;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.time.LocalDate;
@@ -15,7 +17,6 @@ import java.time.YearMonth;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 public class BasicServer {
     private final TaskManager taskManager = new TaskManager();
@@ -23,7 +24,23 @@ public class BasicServer {
 
     public BasicServer(int port) throws IOException {
         server = HttpServer.create(new InetSocketAddress(port), 0);
-        server.createContext("/", this::handleRoot);
+
+        server.createContext("/", exchange -> {
+            String requestPath = exchange.getRequestURI().getPath();
+
+            File file = new File("data" + requestPath);
+            if (file.exists() && !file.isDirectory()) {
+                new StaticFileHandler("data/").handle(exchange);
+                return;
+            }
+
+            if ("/".equals(requestPath)) {
+                handleRoot(exchange);
+            } else {
+                RenderTemplate.sendErrorResponse(exchange, ResponseCodes.NOT_FOUND, "404 NOT FOUND");
+            }
+        });
+
         server.createContext("/tasks", this::handleTasks);
         server.setExecutor(null);
     }
@@ -34,24 +51,20 @@ public class BasicServer {
     }
 
     private void handleRoot(HttpExchange exchange) throws IOException {
-
-
         LocalDate today = LocalDate.now();
         YearMonth yearMonth = YearMonth.from(today);
         LocalDate firstDayOfMonth = yearMonth.atDay(1);
         LocalDate lastDayOfMonth = yearMonth.atEndOfMonth();
 
-        // Генерация списка всех дней месяца
         List<LocalDate> daysInMonth = firstDayOfMonth.datesUntil(lastDayOfMonth.plusDays(1)).toList();
 
         Map<String, Object> data = new HashMap<>();
         data.put("today", today);
-        data.put("daysInMonth", daysInMonth);  // Передаем список всех дней месяца
+        data.put("daysInMonth", daysInMonth);
         data.put("tasksByDate", taskManager);
 
         RenderTemplate.renderTemplate(exchange, "calendar.ftlh", data);
     }
-
 
     private void handleTasks(HttpExchange exchange) throws IOException {
         String path = exchange.getRequestURI().getPath();
@@ -73,7 +86,6 @@ public class BasicServer {
 
         RenderTemplate.renderTemplate(exchange, "task_list.ftl", data);
     }
-
 
     private void handleAddTask(HttpExchange exchange) throws IOException {
         if (exchange.getRequestMethod().equalsIgnoreCase("POST")) {
