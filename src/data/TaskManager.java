@@ -25,15 +25,35 @@ public class TaskManager {
         loadTasks();
     }
 
+    public String generateNextId() {
+        int maxId = 0;
+        for (List<Task> tasks : tasksByDate.values()) {
+            for (Task task : tasks) {
+                try {
+                    int taskId = Integer.parseInt(task.getId());
+                    if (taskId > maxId) {
+                        maxId = taskId;
+                    }
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return String.valueOf(maxId + 1);  // Return the next available ID
+    }
+
     public void addTask(Task task) {
+        String newId = generateNextId();
+        task.setId(newId);
+
         tasksByDate.computeIfAbsent(task.getDate(), k -> new ArrayList<>()).add(task);
         saveTasks();
     }
 
-    public void removeTask(Task task) {
-        List<Task> tasks = tasksByDate.get(task.getDate());
+    public void removeTaskById(String taskId, LocalDate date) {
+        List<Task> tasks = tasksByDate.get(date);
         if (tasks != null) {
-            tasks.remove(task);
+            tasks.removeIf(task -> task.getId().equals(taskId));
             saveTasks();
         }
     }
