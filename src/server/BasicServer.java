@@ -3,10 +3,7 @@ package server;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
 import data.TaskManager;
-import handlers.CalendarHandler;
-import handlers.StaticFileHandler;
-import handlers.TaskListHandler;
-import handlers.AddTaskHandler;
+import handlers.*;
 import template.RenderTemplate;
 
 import java.io.File;
@@ -24,6 +21,7 @@ public class BasicServer {
         server.createContext("/calendar", new CalendarHandler(this));
         server.createContext("/tasks", new TaskListHandler(this));
         server.createContext("/tasks/add", new AddTaskHandler(taskManager));
+        server.createContext("/tasks/delete", new TaskDeleteHandler(this));
 
         server.createContext("/", exchange -> {
             String requestPath = exchange.getRequestURI().getPath();
@@ -52,9 +50,5 @@ public class BasicServer {
 
     public TaskManager getTaskManager() {
         return taskManager;
-    }
-
-    private void handleRoot(HttpExchange exchange) throws IOException {
-        RenderTemplate.renderTemplate(exchange, "root.html", null);
     }
 }
