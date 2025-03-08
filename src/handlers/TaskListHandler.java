@@ -4,7 +4,9 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import model.Task;
 import server.BasicServer;
+import server.ResponseCodes;
 import template.RenderTemplate;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -20,15 +22,24 @@ public class TaskListHandler implements RequestHandler, HttpHandler {
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
-        LocalDate today = LocalDate.now();
-
         String query = exchange.getRequestURI().getQuery();
-        LocalDate date = LocalDate.parse(query.split("=")[1]);
 
+        if (query == null || !query.startsWith("date=")) {
+            RenderTemplate.sendErrorResponse(exchange, ResponseCodes.NOT_FOUND, "400 BAD REQUEST: Invalid or missing 'date' parameter");
+            return;
+        }
+
+        LocalDate date;
+        try {
+            date = LocalDate.parse(query.split("=")[1]);
+        } catch (Exception e) {
+            RenderTemplate.sendErrorResponse(exchange, ResponseCodes.NOT_FOUND, "400 BAD REQUEST: Invalid date format");
+            return;
+        }
         List<Task> tasks = server.getTaskManager().getTasksByDate(date);
 
         Map<String, Object> data = new HashMap<>();
-        data.put("today", today);
+        data.put("today", LocalDate.now());
         data.put("date", date);
         data.put("tasks", tasks);
 

@@ -3,6 +3,7 @@ package handlers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import server.BasicServer;
+import server.ResponseCodes;
 import template.RenderTemplate;
 
 import java.io.IOException;
@@ -21,6 +22,13 @@ public class CalendarHandler implements RequestHandler, HttpHandler {
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
+        String path = exchange.getRequestURI().getPath();
+
+        if (!"/calendar".equals(path) && path.startsWith("/calendar/")) {
+            RenderTemplate.sendErrorResponse(exchange, ResponseCodes.NOT_FOUND, "404 NOT FOUND");
+            return;
+        }
+
         LocalDate today = LocalDate.now();
         YearMonth yearMonth = YearMonth.from(today);
         LocalDate firstDayOfMonth = yearMonth.atDay(1);
@@ -36,4 +44,3 @@ public class CalendarHandler implements RequestHandler, HttpHandler {
         RenderTemplate.renderTemplate(exchange, "calendar.ftlh", data);
     }
 }
-
