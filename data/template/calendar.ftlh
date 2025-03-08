@@ -29,18 +29,20 @@
 </#if>
 
 <div class="calendar-cell <#if day == today>today</#if>">
-    <a href="/tasks?date=${day}">${day.dayOfMonth}</a>
-    <#list tasksByDate.getTasksByDate(day) as task>
-    <#if task.type??>
-    <div class="task-card" style="background-color: ${task.type.color};">
-        <span class="task-title">${task.title}</span>
-    </div>
-    <#else>
-    <div class="task-card" style="background-color: #cccccc;">
-        <span class="task-title">${task.title}</span>
-    </div>
-</#if>
+    <a href="/tasks?date=${day}" class="task-link">
+        <div class="day-number">${day.dayOfMonth}</div>
+        <#list tasksByDate.getTasksByDate(day) as task>
+        <#if task.type??>
+        <div class="task-card" style="background-color: ${task.type.color};">
+            <span class="task-title">${task.title}</span>
+        </div>
+        <#else>
+        <div class="task-card" style="background-color: #cccccc;">
+            <span class="task-title">${task.title}</span>
+        </div>
+    </#if>
 </#list>
+</a>
 </div>
 <#if day.dayOfWeek.value == 7>
 </div>
