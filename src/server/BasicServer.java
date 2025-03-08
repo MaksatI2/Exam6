@@ -21,7 +21,7 @@ public class BasicServer {
         server = HttpServer.create(new InetSocketAddress(port), 0);
 
         server.createContext("/calendar", new CalendarHandler(this));
-        server.createContext("/tasks", new TaskListHandler(taskManager));
+        server.createContext("/tasks", new TaskListHandler(this));
         server.createContext("/tasks/add", new AddTaskHandler(taskManager));
 
         server.createContext("/", exchange -> {
