@@ -17,8 +17,8 @@
         </div>
         <p class="task-description">${task.description}</p>
         <form action="/tasks/delete" method="POST" class="delete-form">
+            <input type="hidden" name="taskId" value="${task.id}">
             <input type="hidden" name="date" value="${date}">
-            <input type="hidden" name="title" value="${task.title}">
             <button type="submit" class="delete-btn">Delete</button>
         </form>
     </div>
