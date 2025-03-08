@@ -29,7 +29,7 @@
         <button type="submit">Add Task</button>
     </form>
     <br>
-    <a href="/">Back to Calendar</a>
+    <a href="/calendar">Back to Calendar</a>
 </div>
 </body>
 </html>

@@ -72,6 +72,7 @@ a:hover {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
+    gap: 10px;
 }
 
 .delete-btn {
@@ -101,4 +102,37 @@ a:hover {
 
 .add-task:hover {
     background-color: #388E3C;
+}
+
+.edit-btn {
+    background-color: #2196F3;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.edit-btn:hover {
+    background-color: #1976D2;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #f57c00;
 }

@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Tasks for ${date}</h1>
-<a href="/calendar">Back to Calendar</a>
+<a href="/calendar" class="back-btn">Back to Calendar</a>
 <div class="task-list">
     <#list tasks as task>
     <div class="task-card" style="background-color: ${task.type.color};">
@@ -20,6 +20,7 @@
             <input type="hidden" name="taskId" value="${task.id}">
             <input type="hidden" name="date" value="${date}">
             <button type="submit" class="delete-btn">Delete</button>
+            <a href="/tasks/edit?id=${task.id}&date=${task.date}" class="edit-btn">Edit</a>
         </form>
     </div>
 </#list>
