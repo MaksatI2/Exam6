@@ -1,11 +1,498 @@
 {
-  "2025-03-08": [
+  "2025-03-01": [
     {
       "id": "1",
-      "title": "Task1",
-      "description": "task1ffffff",
+      "title": "Morning jog",
+      "description": "Go for a 5 km run at 7:00 am",
+      "type": "REGULAR",
+      "date": "2025-03-01"
+    },
+    {
+      "id": "2",
+      "title": "Grocery shopping",
+      "description": "Buy fruits, vegetables, and milk",
+      "type": "SHOPPING",
+      "date": "2025-03-01"
+    }
+  ],
+  "2025-03-02": [
+    {
+      "id": "3",
+      "title": "Finish report",
+      "description": "Complete the quarterly report for work",
+      "type": "WORK",
+      "date": "2025-03-02"
+    },
+    {
+      "id": "4",
+      "title": "Call mom",
+      "description": "Call mom to check in",
+      "type": "REGULAR",
+      "date": "2025-03-02"
+    }
+  ],
+  "2025-03-03": [
+    {
+      "id": "5",
+      "title": "Fix leaky faucet",
+      "description": "Call plumber or fix it yourself",
+      "type": "URGENT",
+      "date": "2025-03-03"
+    },
+    {
+      "id": "6",
+      "title": "Read a book",
+      "description": "Read at least 20 pages of 'The Great Gatsby'",
+      "type": "OTHER",
+      "date": "2025-03-03"
+    }
+  ],
+  "2025-03-04": [
+    {
+      "id": "7",
+      "title": "Team meeting",
+      "description": "Attend the weekly team meeting at 10:00 am",
+      "type": "WORK",
+      "date": "2025-03-04"
+    },
+    {
+      "id": "8",
+      "title": "Buy new shoes",
+      "description": "Visit the mall to buy running shoes",
+      "type": "SHOPPING",
+      "date": "2025-03-04"
+    }
+  ],
+  "2025-03-05": [
+    {
+      "id": "9",
+      "title": "Dentist appointment",
+      "description": "Visit the dentist at 2:00 pm",
+      "type": "URGENT",
+      "date": "2025-03-05"
+    },
+    {
+      "id": "10",
+      "title": "Plan vacation",
+      "description": "Research destinations for summer vacation",
+      "type": "OTHER",
+      "date": "2025-03-05"
+    }
+  ],
+  "2025-03-06": [
+    {
+      "id": "11",
+      "title": "Yoga class",
+      "description": "Attend yoga class at 6:00 pm",
+      "type": "REGULAR",
+      "date": "2025-03-06"
+    },
+    {
+      "id": "12",
+      "title": "Pay bills",
+      "description": "Pay electricity and internet bills",
+      "type": "URGENT",
+      "date": "2025-03-06"
+    }
+  ],
+  "2025-03-07": [
+    {
+      "id": "13",
+      "title": "Buy groceries",
+      "description": "Buy bread, eggs, and cheese",
+      "type": "SHOPPING",
+      "date": "2025-03-07"
+    },
+    {
+      "id": "14",
+      "title": "Write blog post",
+      "description": "Write a blog post about productivity",
+      "type": "WORK",
+      "date": "2025-03-07"
+    }
+  ],
+  "2025-03-08": [
+    {
+      "id": "15",
+      "title": "Sleep",
+      "description": "Get at least 8 hours of sleep",
+      "type": "OTHER",
+      "date": "2025-03-08"
+    },
+    {
+      "id": "16",
+      "title": "Clean the house",
+      "description": "Vacuum and mop the floors",
       "type": "REGULAR",
       "date": "2025-03-08"
+    }
+  ],
+  "2025-03-09": [
+    {
+      "id": "17",
+      "title": "Visit friend",
+      "description": "Visit a friend for coffee",
+      "type": "OTHER",
+      "date": "2025-03-09"
+    },
+    {
+      "id": "18",
+      "title": "Prepare presentation",
+      "description": "Prepare slides for the Monday meeting",
+      "type": "WORK",
+      "date": "2025-03-09"
+    }
+  ],
+  "2025-03-10": [
+    {
+      "id": "19",
+      "title": "Gym workout",
+      "description": "Go to the gym at 7:00 am",
+      "type": "REGULAR",
+      "date": "2025-03-10"
+    },
+    {
+      "id": "20",
+      "title": "Buy birthday gift",
+      "description": "Buy a gift for Sarah's birthday",
+      "type": "SHOPPING",
+      "date": "2025-03-10"
+    }
+  ],
+  "2025-03-11": [
+    {
+      "id": "21",
+      "title": "Fix laptop",
+      "description": "Take laptop to the repair shop",
+      "type": "URGENT",
+      "date": "2025-03-11"
+    },
+    {
+      "id": "22",
+      "title": "Read news",
+      "description": "Catch up on the latest news",
+      "type": "OTHER",
+      "date": "2025-03-11"
+    }
+  ],
+  "2025-03-12": [
+    {
+      "id": "23",
+      "title": "Team lunch",
+      "description": "Have lunch with the team at 1:00 pm",
+      "type": "WORK",
+      "date": "2025-03-12"
+    },
+    {
+      "id": "24",
+      "title": "Buy new phone",
+      "description": "Research and buy a new smartphone",
+      "type": "SHOPPING",
+      "date": "2025-03-12"
+    }
+  ],
+  "2025-03-13": [
+    {
+      "id": "25",
+      "title": "Morning meditation",
+      "description": "Meditate for 15 minutes",
+      "type": "REGULAR",
+      "date": "2025-03-13"
+    },
+    {
+      "id": "26",
+      "title": "Submit report",
+      "description": "Submit the monthly report to the manager",
+      "type": "WORK",
+      "date": "2025-03-13"
+    }
+  ],
+  "2025-03-14": [
+    {
+      "id": "27",
+      "title": "Buy flowers",
+      "description": "Buy flowers for the living room",
+      "type": "SHOPPING",
+      "date": "2025-03-14"
+    },
+    {
+      "id": "28",
+      "title": "Watch movie",
+      "description": "Watch the new Marvel movie",
+      "type": "OTHER",
+      "date": "2025-03-14"
+    }
+  ],
+  "2025-03-15": [
+    {
+      "id": "29",
+      "title": "Visit parents",
+      "description": "Visit parents for dinner",
+      "type": "OTHER",
+      "date": "2025-03-15"
+    },
+    {
+      "id": "30",
+      "title": "Plan weekend trip",
+      "description": "Plan a trip to the mountains",
+      "type": "REGULAR",
+      "date": "2025-03-15"
+    }
+  ],
+  "2025-03-16": [
+    {
+      "id": "31",
+      "title": "Clean garage",
+      "description": "Organize and clean the garage",
+      "type": "REGULAR",
+      "date": "2025-03-16"
+    },
+    {
+      "id": "32",
+      "title": "Buy tools",
+      "description": "Buy tools for the garage",
+      "type": "SHOPPING",
+      "date": "2025-03-16"
+    }
+  ],
+  "2025-03-17": [
+    {
+      "id": "33",
+      "title": "Fix bike",
+      "description": "Repair the flat tire on the bike",
+      "type": "URGENT",
+      "date": "2025-03-17"
+    },
+    {
+      "id": "34",
+      "title": "Write email",
+      "description": "Send an email to the client",
+      "type": "WORK",
+      "date": "2025-03-17"
+    }
+  ],
+  "2025-03-18": [
+    {
+      "id": "35",
+      "title": "Buy groceries",
+      "description": "Buy milk, bread, and eggs",
+      "type": "SHOPPING",
+      "date": "2025-03-18"
+    },
+    {
+      "id": "36",
+      "title": "Read a book",
+      "description": "Read 30 pages of '1984'",
+      "type": "OTHER",
+      "date": "2025-03-18"
+    }
+  ],
+  "2025-03-19": [
+    {
+      "id": "37",
+      "title": "Morning run",
+      "description": "Go for a 10 km run",
+      "type": "REGULAR",
+      "date": "2025-03-19"
+    },
+    {
+      "id": "38",
+      "title": "Prepare presentation",
+      "description": "Prepare slides for the conference",
+      "type": "WORK",
+      "date": "2025-03-19"
+    }
+  ],
+  "2025-03-20": [
+    {
+      "id": "39",
+      "title": "Buy new shoes",
+      "description": "Buy a pair of running shoes",
+      "type": "SHOPPING",
+      "date": "2025-03-20"
+    },
+    {
+      "id": "40",
+      "title": "Visit the dentist",
+      "description": "Routine dental checkup at 3:00 pm",
+      "type": "URGENT",
+      "date": "2025-03-20"
+    }
+  ],
+  "2025-03-21": [
+    {
+      "id": "41",
+      "title": "Plan dinner party",
+      "description": "Plan menu and invite guests",
+      "type": "OTHER",
+      "date": "2025-03-21"
+    },
+    {
+      "id": "42",
+      "title": "Buy ingredients",
+      "description": "Buy ingredients for the dinner party",
+      "type": "SHOPPING",
+      "date": "2025-03-21"
+    }
+  ],
+  "2025-03-22": [
+    {
+      "id": "43",
+      "title": "Clean the house",
+      "description": "Vacuum and dust the house",
+      "type": "REGULAR",
+      "date": "2025-03-22"
+    },
+    {
+      "id": "44",
+      "title": "Write report",
+      "description": "Complete the monthly sales report",
+      "type": "WORK",
+      "date": "2025-03-22"
+    }
+  ],
+  "2025-03-23": [
+    {
+      "id": "45",
+      "title": "Visit the park",
+      "description": "Take a walk in the park",
+      "type": "OTHER",
+      "date": "2025-03-23"
+    },
+    {
+      "id": "46",
+      "title": "Buy new phone",
+      "description": "Research and buy a new smartphone",
+      "type": "SHOPPING",
+      "date": "2025-03-23"
+    }
+  ],
+  "2025-03-24": [
+    {
+      "id": "47",
+      "title": "Morning yoga",
+      "description": "Attend yoga class at 7:00 am",
+      "type": "REGULAR",
+      "date": "2025-03-24"
+    },
+    {
+      "id": "48",
+      "title": "Fix the car",
+      "description": "Take the car to the mechanic",
+      "type": "URGENT",
+      "date": "2025-03-24"
+    }
+  ],
+  "2025-03-25": [
+    {
+      "id": "49",
+      "title": "Buy groceries",
+      "description": "Buy fruits, vegetables, and milk",
+      "type": "SHOPPING",
+      "date": "2025-03-25"
+    },
+    {
+      "id": "50",
+      "title": "Write blog post",
+      "description": "Write a blog post about travel",
+      "type": "WORK",
+      "date": "2025-03-25"
+    }
+  ],
+  "2025-03-26": [
+    {
+      "id": "51",
+      "title": "Visit the gym",
+      "description": "Go to the gym at 6:00 pm",
+      "type": "REGULAR",
+      "date": "2025-03-26"
+    },
+    {
+      "id": "52",
+      "title": "Buy new clothes",
+      "description": "Buy a new jacket and shoes",
+      "type": "SHOPPING",
+      "date": "2025-03-26"
+    }
+  ],
+  "2025-03-27": [
+    {
+      "id": "53",
+      "title": "Fix the roof",
+      "description": "Repair the leak in the roof",
+      "type": "URGENT",
+      "date": "2025-03-27"
+    },
+    {
+      "id": "54",
+      "title": "Read a book",
+      "description": "Read 20 pages of 'The Alchemist'",
+      "type": "OTHER",
+      "date": "2025-03-27"
+    }
+  ],
+  "2025-03-28": [
+    {
+      "id": "55",
+      "title": "Team meeting",
+      "description": "Attend the weekly team meeting",
+      "type": "WORK",
+      "date": "2025-03-28"
+    },
+    {
+      "id": "56",
+      "title": "Buy groceries",
+      "description": "Buy bread, eggs, and cheese",
+      "type": "SHOPPING",
+      "date": "2025-03-28"
+    }
+  ],
+  "2025-03-29": [
+    {
+      "id": "57",
+      "title": "Morning jog",
+      "description": "Go for a 5 km run at 7:00 am",
+      "type": "REGULAR",
+      "date": "2025-03-29"
+    },
+    {
+      "id": "58",
+      "title": "Plan vacation",
+      "description": "Research destinations for summer vacation",
+      "type": "OTHER",
+      "date": "2025-03-29"
+    }
+  ],
+  "2025-03-30": [
+    {
+      "id": "59",
+      "title": "Clean the house",
+      "description": "Vacuum and mop the floors",
+      "type": "REGULAR",
+      "date": "2025-03-30"
+    },
+    {
+      "id": "60",
+      "title": "Buy new shoes",
+      "description": "Buy a pair of running shoes",
+      "type": "SHOPPING",
+      "date": "2025-03-30"
+    }
+  ],
+  "2025-03-31": [
+    {
+      "id": "61",
+      "title": "Visit the dentist",
+      "description": "Routine dental checkup at 2:00 pm",
+      "type": "URGENT",
+      "date": "2025-03-31"
+    },
+    {
+      "id": "62",
+      "title": "Write report",
+      "description": "Complete the monthly sales report",
+      "type": "WORK",
+      "date": "2025-03-31"
     }
   ]
 }

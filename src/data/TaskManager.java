@@ -40,7 +40,7 @@ public class TaskManager {
                 }
             }
         }
-        return String.valueOf(maxId + 1);  // Return the next available ID
+        return String.valueOf(maxId + 1);
     }
 
     public void addTask(Task task) {
