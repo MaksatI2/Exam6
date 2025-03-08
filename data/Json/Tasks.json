@@ -1,0 +1,18 @@
+{
+  "2025-03-01": [
+    {
+      "title": "Task 1",
+      "description": "Description for task 1",
+      "type": "WORK",
+      "date": "2025-03-01"
+    }
+  ],
+  "2025-03-05": [
+    {
+      "title": "Task 2",
+      "description": "Description for task 2",
+      "type": "PERSONAL",
+      "date": "2025-03-05"
+    }
+  ]
+}
