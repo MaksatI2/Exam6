@@ -34,7 +34,7 @@ public class AddTaskHandler implements RequestHandler, HttpHandler {
             exchange.getResponseHeaders().set("Location", "/tasks?date=" + date);
             exchange.sendResponseHeaders(303, -1);
         } else {
-            RenderTemplate.renderTemplate(exchange, "addTask.ftlh", Map.of());
+            RenderTemplate.renderTemplate(exchange, "addTask.ftlh", Map.of("date", exchange.getRequestURI().getQuery().split("=")[1]));
         }
     }
 }
