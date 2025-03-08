@@ -20,7 +20,7 @@ public class TaskManager {
     public TaskManager() {
         tasksByDate = new HashMap<>();
         gson = new GsonBuilder()
-                .registerTypeAdapter(LocalDate.class, new LocalDateAdapter()) // Регистрируем адаптер
+                .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
                 .create();
         loadTasks();
     }

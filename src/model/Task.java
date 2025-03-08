@@ -17,7 +17,6 @@ public class Task {
         this.date = date;
     }
 
-    // Геттеры и сеттеры
     public String getTitle() {
         return title;
     }
